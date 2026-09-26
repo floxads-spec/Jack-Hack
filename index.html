@@ -46,7 +46,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       overflow-x: hidden;
     }
 
-    .jack-page {
+    .jack-hack-page {
       position: relative;
       isolation: isolate;
       width: 100%;
@@ -59,55 +59,55 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       overflow: hidden;
       color: #ffffff;
       background:
-        radial-gradient(circle at 12% 18%, rgba(255, 0, 119, .3), transparent 32%),
-        radial-gradient(circle at 88% 82%, rgba(0, 174, 255, .25), transparent 34%),
+        radial-gradient(circle at 12% 18%, rgba(255,0,119,.30), transparent 32%),
+        radial-gradient(circle at 88% 82%, rgba(0,174,255,.25), transparent 34%),
         linear-gradient(145deg, #050208, #12051d 52%, #020812);
     }
 
-    .live-grid {
+    .jack-grid {
       position: absolute;
-      inset: -60%;
+      inset: -70%;
       z-index: -5;
-      width: 220%;
-      height: 220%;
-      opacity: .15;
+      width: 240%;
+      height: 240%;
+      opacity: .16;
       pointer-events: none;
       background-image:
         linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
       background-size: 50px 50px;
-      transform: perspective(600px) rotateX(62deg);
-      animation: gridMove 14s linear infinite;
+      transform: perspective(650px) rotateX(62deg);
+      animation: jackGrid 14s linear infinite;
     }
 
-    .glow {
+    .jack-glow {
       position: absolute;
       z-index: -4;
       width: 430px;
       height: 430px;
       border-radius: 50%;
       filter: blur(90px);
-      opacity: .3;
+      opacity: .30;
       pointer-events: none;
     }
 
-    .glow-pink {
+    .jack-glow-pink {
       top: -190px;
       left: -140px;
       background: #ff0077;
-      animation: pinkMove 9s ease-in-out infinite alternate;
+      animation: pinkGlow 9s ease-in-out infinite alternate;
     }
 
-    .glow-blue {
+    .jack-glow-blue {
       right: -170px;
       bottom: -200px;
       background: #00aeff;
-      animation: blueMove 11s ease-in-out infinite alternate;
+      animation: blueGlow 11s ease-in-out infinite alternate;
     }
 
-    .particle {
+    .jack-particle {
       position: absolute;
-      bottom: -20px;
+      bottom: -25px;
       z-index: -2;
       width: 5px;
       height: 5px;
@@ -115,20 +115,39 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       background: #ffffff;
       box-shadow: 0 0 14px #ff2d8d;
       opacity: 0;
-      animation: floatParticle 8s linear infinite;
+      pointer-events: none;
+      animation: jackParticle 8s linear infinite;
     }
 
-    .p1 { left: 10%; }
-    .p2 { left: 28%; animation-delay: 2s; }
-    .p3 { left: 53%; animation-delay: 4s; }
-    .p4 { left: 75%; animation-delay: 1s; }
-    .p5 { left: 91%; animation-delay: 5s; }
+    .particle-one {
+      left: 10%;
+    }
+
+    .particle-two {
+      left: 29%;
+      animation-delay: 2s;
+    }
+
+    .particle-three {
+      left: 52%;
+      animation-delay: 4s;
+    }
+
+    .particle-four {
+      left: 76%;
+      animation-delay: 1s;
+    }
+
+    .particle-five {
+      left: 92%;
+      animation-delay: 5s;
+    }
 
     .jack-card {
       position: relative;
       width: 100%;
       max-width: 1050px;
-      min-height: 650px;
+      min-height: min(650px, calc(100svh - 60px));
       padding: clamp(40px, 7vw, 80px);
       display: grid;
       grid-template-columns: 1.05fr .95fr;
@@ -137,7 +156,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.16);
       border-radius: 34px;
-      background: rgba(15, 8, 25, .78);
+      background: rgba(15,8,25,.80);
       box-shadow:
         0 35px 100px rgba(0,0,0,.65),
         inset 0 1px rgba(255,255,255,.08);
@@ -163,12 +182,12 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       box-shadow: 0 0 20px rgba(255,45,141,.75);
     }
 
-    .content {
+    .jack-content {
       position: relative;
-      z-index: 3;
+      z-index: 5;
     }
 
-    .badge {
+    .jack-badge {
       width: fit-content;
       margin-bottom: 24px;
       padding: 8px 15px;
@@ -185,26 +204,26 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       text-transform: uppercase;
     }
 
-    .badge-dot {
+    .jack-badge-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: #ff2d8d;
       box-shadow: 0 0 12px #ff2d8d;
-      animation: blink 1.3s ease-in-out infinite;
+      animation: jackBlink 1.3s ease-in-out infinite;
     }
 
-    .main-heading {
+    .jack-title {
       margin: 0;
       font-size: clamp(58px, 9vw, 112px);
-      line-height: .9;
+      line-height: .90;
       font-weight: 900;
       letter-spacing: -6px;
       text-transform: uppercase;
       text-shadow: 0 12px 35px rgba(0,0,0,.5);
     }
 
-    .main-heading span {
+    .jack-title span {
       display: block;
       color: transparent;
       background: linear-gradient(
@@ -219,7 +238,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       -webkit-text-fill-color: transparent;
     }
 
-    .description {
+    .jack-description {
       max-width: 540px;
       margin: 25px 0 0;
       color: #b9afc8;
@@ -227,7 +246,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       line-height: 1.75;
     }
 
-    .telegram-button {
+    .jack-button {
       position: relative;
       width: fit-content;
       margin-top: 32px;
@@ -237,7 +256,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       justify-content: center;
       gap: 11px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.70);
       border-radius: 999px;
       color: #ffffff;
       background: linear-gradient(
@@ -247,8 +266,8 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
         #008fc7
       );
       box-shadow:
-        0 16px 38px rgba(255,45,141,.3),
-        inset 0 1px rgba(255,255,255,.3);
+        0 16px 38px rgba(255,45,141,.30),
+        inset 0 1px rgba(255,255,255,.30);
       font-size: 14px;
       font-weight: 800;
       letter-spacing: .8px;
@@ -258,7 +277,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       -webkit-tap-highlight-color: transparent;
     }
 
-    .telegram-button::before {
+    .jack-button::before {
       content: "";
       position: absolute;
       top: 0;
@@ -275,41 +294,42 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       animation: buttonShine 3s ease-in-out infinite;
     }
 
-    .telegram-button:hover {
+    .jack-button:hover {
       transform: translateY(-4px) scale(1.03);
       box-shadow:
         0 21px 48px rgba(255,45,141,.45),
-        0 0 28px rgba(24,200,255,.2);
+        0 0 28px rgba(24,200,255,.20);
     }
 
-    .telegram-button:active {
+    .jack-button:active {
       transform: scale(.97);
     }
 
-    .telegram-button svg,
-    .telegram-button span {
+    .jack-button svg,
+    .jack-button span {
       position: relative;
       z-index: 2;
     }
 
-    .telegram-button svg {
+    .jack-button svg {
       width: 22px;
       height: 22px;
+      flex-shrink: 0;
     }
 
-    .notice {
+    .jack-notice {
       margin-top: 24px;
       display: flex;
       align-items: center;
       gap: 10px;
-      color: rgba(255,255,255,.5);
+      color: rgba(255,255,255,.52);
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .notice-dot {
+    .jack-notice-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -317,14 +337,14 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       box-shadow: 0 0 9px #ff2d8d;
     }
 
-    .visual {
+    .jack-visual {
       position: relative;
       min-height: 430px;
       display: grid;
       place-items: center;
     }
 
-    .logo-ring {
+    .jack-logo-ring {
       position: absolute;
       width: 360px;
       height: 360px;
@@ -333,19 +353,19 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       animation: ringRotate 16s linear infinite;
     }
 
-    .logo-ring::before,
-    .logo-ring::after {
+    .jack-logo-ring::before,
+    .jack-logo-ring::after {
       content: "";
       position: absolute;
       border-radius: 50%;
     }
 
-    .logo-ring::before {
+    .jack-logo-ring::before {
       inset: 22px;
       border: 2px dashed rgba(255,45,141,.35);
     }
 
-    .logo-ring::after {
+    .jack-logo-ring::after {
       inset: -7px;
       border-top: 3px solid #ff2d8d;
       border-right: 3px solid transparent;
@@ -354,9 +374,9 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       filter: drop-shadow(0 0 8px rgba(255,45,141,.7));
     }
 
-    .profile-logo {
+    .jack-profile-logo {
       position: relative;
-      z-index: 3;
+      z-index: 4;
       width: 270px;
       height: 270px;
       padding: 6px;
@@ -375,17 +395,17 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       animation: logoFloat 4s ease-in-out infinite;
     }
 
-    .profile-logo img {
+    .jack-profile-logo img {
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
-      object-position: center;
+      object-position: center top;
       border-radius: 50%;
       background: #09050e;
     }
 
-    .live-status {
+    .jack-live-status {
       position: absolute;
       z-index: 5;
       right: 35px;
@@ -396,7 +416,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       gap: 7px;
       border: 1px solid rgba(255,255,255,.18);
       border-radius: 999px;
-      background: rgba(7,3,11,.85);
+      background: rgba(7,3,11,.88);
       box-shadow: 0 8px 22px rgba(0,0,0,.45);
       font-size: 11px;
       font-weight: 700;
@@ -404,50 +424,50 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       text-transform: uppercase;
     }
 
-    .live-status::before {
+    .jack-live-status::before {
       content: "";
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background: #50f29a;
       box-shadow: 0 0 10px #50f29a;
-      animation: blink 1.3s ease-in-out infinite;
+      animation: jackBlink 1.3s ease-in-out infinite;
     }
 
-    .footer {
+    .jack-footer {
       position: absolute;
       right: 28px;
       bottom: 20px;
-      color: rgba(255,255,255,.35);
+      color: rgba(255,255,255,.36);
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    .footer strong {
+    .jack-footer strong {
       color: #ff76b6;
     }
 
-    @keyframes gridMove {
+    @keyframes jackGrid {
       to {
         background-position: 0 100px;
       }
     }
 
-    @keyframes pinkMove {
+    @keyframes pinkGlow {
       to {
-        transform: translate(80px, 55px) scale(1.15);
+        transform: translate(80px,55px) scale(1.15);
       }
     }
 
-    @keyframes blueMove {
+    @keyframes blueGlow {
       to {
-        transform: translate(-75px, -50px) scale(.9);
+        transform: translate(-75px,-50px) scale(.9);
       }
     }
 
-    @keyframes floatParticle {
+    @keyframes jackParticle {
       0% {
         transform: translateY(0) scale(.4);
         opacity: 0;
@@ -475,7 +495,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
       }
     }
 
-    @keyframes blink {
+    @keyframes jackBlink {
       50% {
         opacity: .35;
       }
@@ -511,7 +531,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
     }
 
     @media (max-width: 850px) {
-      .jack-page {
+      .jack-hack-page {
         display: block;
         min-height: 100svh;
         padding: 16px;
@@ -526,51 +546,52 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
         border-radius: 26px;
       }
 
-      .content {
+      .jack-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
 
-      .main-heading {
+      .jack-title {
         font-size: clamp(55px, 16vw, 92px);
         letter-spacing: -4px;
       }
 
-      .description {
+      .jack-description {
         margin-top: 21px;
       }
 
-      .telegram-button {
+      .jack-button {
         width: 100%;
         max-width: 350px;
       }
 
-      .notice {
+      .jack-notice {
         justify-content: center;
+        flex-wrap: wrap;
       }
 
-      .visual {
+      .jack-visual {
         min-height: 340px;
       }
 
-      .logo-ring {
+      .jack-logo-ring {
         width: 285px;
         height: 285px;
       }
 
-      .profile-logo {
+      .jack-profile-logo {
         width: 215px;
         height: 215px;
       }
 
-      .live-status {
+      .jack-live-status {
         right: calc(50% - 130px);
         bottom: 35px;
       }
 
-      .footer {
+      .jack-footer {
         right: 0;
         left: 0;
         bottom: 20px;
@@ -579,7 +600,7 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
     }
 
     @media (max-width: 420px) {
-      .jack-page {
+      .jack-hack-page {
         padding: 10px;
       }
 
@@ -588,91 +609,82 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
         gap: 30px;
       }
 
-      .badge {
+      .jack-badge {
         margin-bottom: 20px;
         font-size: 10px;
       }
 
-      .main-heading {
+      .jack-title {
         font-size: clamp(49px, 17vw, 70px);
       }
 
-      .description {
+      .jack-description {
         font-size: 14px;
         line-height: 1.7;
       }
 
-      .telegram-button {
+      .jack-button {
         padding: 15px 18px;
         font-size: 13px;
       }
 
-      .notice {
+      .jack-notice {
         font-size: 10px;
       }
 
-      .visual {
+      .jack-visual {
         min-height: 285px;
       }
 
-      .logo-ring {
+      .jack-logo-ring {
         width: 235px;
         height: 235px;
       }
 
-      .profile-logo {
+      .jack-profile-logo {
         width: 178px;
         height: 178px;
       }
 
-      .live-status {
+      .jack-live-status {
         right: calc(50% - 111px);
         bottom: 23px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .jack-page *,
-      .jack-page *::before,
-      .jack-page *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="jack-page">
-    <div class="live-grid"></div>
-    <div class="glow glow-pink"></div>
-    <div class="glow glow-blue"></div>
+  <main class="jack-hack-page">
+    <div class="jack-grid"></div>
+    <div class="jack-glow jack-glow-pink"></div>
+    <div class="jack-glow jack-glow-blue"></div>
 
-    <span class="particle p1"></span>
-    <span class="particle p2"></span>
-    <span class="particle p3"></span>
-    <span class="particle p4"></span>
-    <span class="particle p5"></span>
+    <span class="jack-particle particle-one"></span>
+    <span class="jack-particle particle-two"></span>
+    <span class="jack-particle particle-three"></span>
+    <span class="jack-particle particle-four"></span>
+    <span class="jack-particle particle-five"></span>
 
     <section class="jack-card">
-      <div class="content">
-        <div class="badge">
-          <span class="badge-dot"></span>
+      <div class="jack-content">
+        <div class="jack-badge">
+          <span class="jack-badge-dot"></span>
           Official Private Community
         </div>
 
-        <h1 class="main-heading">
+        <h1 class="jack-title">
           Jack
           <span>Hack</span>
         </h1>
 
-        <p class="description">
+        <p class="jack-description">
           Join the official community for fresh updates, exclusive content
           and important announcements directly on Telegram.
         </p>
 
         <a
-          class="telegram-button"
+          class="jack-button"
           href="https://t.me/+_EwejIWCt8diYmI9"
           target="_blank"
           rel="noopener noreferrer">
@@ -684,28 +696,29 @@ src="https://www.facebook.com/tr?id=28019449611066940&ev=PageView&noscript=1"
           <span>Join Telegram Channel</span>
         </a>
 
-        <div class="notice">
+        <div class="jack-notice">
           <span>18+ Audience Only</span>
-          <span class="notice-dot"></span>
+          <span class="jack-notice-dot"></span>
           <span>Join Responsibly</span>
         </div>
       </div>
 
-      <div class="visual">
-        <div class="logo-ring"></div>
+      <div class="jack-visual">
+        <div class="jack-logo-ring"></div>
 
-        <div class="profile-logo">
+        <!-- LOGO PHOTO ADDED HERE -->
+        <div class="jack-profile-logo">
           <img
-            src="https://jack-hack-channel.floxads-co.chatgpt.site/jack-hack-logo.png"
-            alt="Jack Hack Logo">
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=700&amp;q=90"
+            alt="Jack Hack Girl Logo">
         </div>
 
-        <div class="live-status">
+        <div class="jack-live-status">
           Live Community
         </div>
       </div>
 
-      <div class="footer">
+      <div class="jack-footer">
         Ads by <strong>FLOX ADS</strong>
       </div>
     </section>
